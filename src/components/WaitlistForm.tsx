@@ -22,30 +22,30 @@ const WaitlistForm = () => {
 
   if (formState === "success") {
     return (
-      <div className="animate-fade-up flex items-center gap-3 text-primary">
-        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10">
-          <Check className="h-5 w-5" />
+      <div className="animate-fade-up flex items-center gap-3 text-foreground">
+        <div className="flex h-9 w-9 items-center justify-center rounded-full bg-foreground/10">
+          <Check className="h-4 w-4" />
         </div>
-        <span className="text-sm font-medium">You're on the list. We'll be in touch.</span>
+        <span className="text-sm">You're on the list. We'll be in touch.</span>
       </div>
     );
   }
 
   return (
     <form onSubmit={handleSubmit} className="w-full max-w-sm">
-      <div className="glass-card group relative flex items-center rounded-full p-1 transition-all duration-300 focus-within:border-primary/50 focus-within:glow-primary">
+      <div className="group relative flex items-center rounded-full border border-border bg-background p-1 transition-all duration-300 focus-within:border-foreground/30">
         <input
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Enter your email"
           required
-          className="h-11 flex-1 bg-transparent px-5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none"
+          className="h-10 flex-1 bg-transparent px-5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none"
         />
         <button
           type="submit"
           disabled={formState === "loading"}
-          className="flex h-11 items-center gap-2 rounded-full bg-primary px-5 text-sm font-medium text-primary-foreground transition-all duration-300 hover:bg-primary/90 disabled:opacity-70"
+          className="flex h-10 items-center gap-2 rounded-full bg-foreground px-5 text-sm font-medium text-background transition-all duration-300 hover:bg-foreground/85 disabled:opacity-70"
         >
           {formState === "loading" ? (
             <Loader2 className="h-4 w-4 animate-spin" />
