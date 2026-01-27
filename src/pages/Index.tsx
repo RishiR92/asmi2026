@@ -1,13 +1,18 @@
 import Navigation from "@/components/Navigation";
 import WaitlistForm from "@/components/WaitlistForm";
+import heroBg from "@/assets/hero-bg.jpg";
 
 const Index = () => {
   return (
-    <div className="relative flex h-full flex-col bg-background">
-      {/* Ambient glow */}
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute left-1/2 top-1/3 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/5 blur-[120px]" />
-      </div>
+    <div className="relative flex h-full flex-col overflow-hidden">
+      {/* Background image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${heroBg})` }}
+      />
+      
+      {/* Dark overlay for text readability */}
+      <div className="absolute inset-0 bg-background/60" />
 
       <Navigation />
 
@@ -15,7 +20,7 @@ const Index = () => {
         <div className="flex w-full max-w-xl flex-col items-center text-center">
           {/* Tagline */}
           <div className="animate-fade-up mb-6">
-            <span className="inline-block rounded-full border border-border bg-secondary/50 px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-muted-foreground">
+            <span className="inline-block rounded-full border border-border/50 bg-card/40 backdrop-blur-sm px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-muted-foreground">
               Personal AI, redefined
             </span>
           </div>
