@@ -38,17 +38,17 @@ const Team = () => {
         <div className="mx-auto w-full max-w-2xl">
           <Link
             to="/"
-            className="mb-8 inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
+            className="mb-8 inline-flex items-center gap-2 text-xs uppercase tracking-widest text-muted-foreground transition-colors hover:text-foreground"
           >
             <ArrowLeft className="h-4 w-4" />
-            Back to home
+            Back
           </Link>
 
           <div className="mb-10 animate-fade-up">
             <h1 className="mb-3 font-serif text-3xl italic text-foreground md:text-4xl">
               The Founding Anomaly
             </h1>
-            <p className="text-muted-foreground">
+            <p className="text-sm text-muted-foreground md:text-base">
               Building the next iconic consumer company requires the rarest combination:{" "}
               <span className="text-foreground">hyper-scale execution meets world-class AI research.</span>
             </p>
@@ -64,7 +64,7 @@ const Team = () => {
             ))}
           </div>
 
-          <p className="mt-8 animate-fade-up-delay-3 text-center text-sm text-muted-foreground">
+          <p className="mt-8 animate-fade-up-delay-3 text-center text-xs text-muted-foreground">
             Founding team spans{" "}
             <span className="text-foreground">DeepMind, Google, Amazon, CMU, UC Berkeley</span> & more.
           </p>

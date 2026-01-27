@@ -10,25 +10,25 @@ interface TeamMemberProps {
 
 const TeamMember = ({ name, role, description, linkedIn, delay = "" }: TeamMemberProps) => {
   return (
-    <div className={`glass-card hover-lift rounded-2xl p-6 ${delay}`}>
+    <div className={`rounded-xl border border-border bg-card p-6 transition-all duration-300 hover:border-foreground/20 ${delay}`}>
       <div className="mb-4 flex items-start justify-between">
         <div>
-          <h3 className="text-lg font-semibold text-foreground">{name}</h3>
-          <p className="text-sm text-primary">{role}</p>
+          <h3 className="text-lg font-medium text-foreground">{name}</h3>
+          <p className="font-serif text-sm italic text-muted-foreground">{role}</p>
         </div>
         <a
           href={linkedIn}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex h-9 w-9 items-center justify-center rounded-full bg-secondary text-muted-foreground transition-colors hover:bg-primary hover:text-primary-foreground"
+          className="flex h-8 w-8 items-center justify-center rounded-full border border-border text-muted-foreground transition-all hover:border-foreground hover:text-foreground"
         >
-          <ExternalLink className="h-4 w-4" />
+          <ExternalLink className="h-3.5 w-3.5" />
         </a>
       </div>
       <ul className="space-y-2">
         {description.map((item, index) => (
-          <li key={index} className="flex items-start gap-2 text-sm text-muted-foreground">
-            <span className="mt-1.5 h-1 w-1 flex-shrink-0 rounded-full bg-primary/60" />
+          <li key={index} className="flex items-start gap-2.5 text-sm text-muted-foreground">
+            <span className="mt-2 h-1 w-1 flex-shrink-0 rounded-full bg-foreground/30" />
             <span>{item}</span>
           </li>
         ))}
