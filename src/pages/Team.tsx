@@ -9,13 +9,13 @@ const Team = () => {
       name: "Rishi",
       role: "Co-founder & CEO",
       linkedIn: "https://www.linkedin.com/in/rishi-r-37705a3a/",
-      story: "Built and exited India's largest vertical e-commerce platform ($400M sales). Raised $100M from DoorDash and Zoom founders. Forbes 30 Under 30 Asia.",
+      story: "Built and exited India's largest vertical e-commerce - $400M sales, raised $100M. Built tech products for 500M consumers at Flipkart. Forbes 30 Under 30 Asia.",
     },
     {
       name: "Satwik",
       role: "Co-founder & CTO",
       linkedIn: "https://satwikkottur.github.io/",
-      story: "Pioneer in agentic AI with FAIR and DeepMind experience. PhD from CMU with award-winning thesis on Large Action Models. 40+ papers, IIT AIR 6.",
+      story: "Pioneer in agentic AI with FAIR and DeepMind experience. PhD from CMU with award-winning thesis on Large Action Models. 40+ highly cited papers, won international olympiads.",
     },
   ];
 
