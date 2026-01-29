@@ -3,12 +3,13 @@ import { ExternalLink } from "lucide-react";
 interface TeamMemberProps {
   name: string;
   role: string;
-  description: string[];
+  story?: string;
+  description?: string[];
   linkedIn: string;
   delay?: string;
 }
 
-const TeamMember = ({ name, role, description, linkedIn, delay = "" }: TeamMemberProps) => {
+const TeamMember = ({ name, role, story, description, linkedIn, delay = "" }: TeamMemberProps) => {
   return (
     <div className={`rounded-xl border border-border bg-card p-6 transition-all duration-300 hover:border-foreground/20 ${delay}`}>
       <div className="mb-4 flex items-start justify-between">
@@ -25,14 +26,20 @@ const TeamMember = ({ name, role, description, linkedIn, delay = "" }: TeamMembe
           <ExternalLink className="h-3.5 w-3.5" />
         </a>
       </div>
-      <ul className="space-y-2">
-        {description.map((item, index) => (
-          <li key={index} className="flex items-start gap-2.5 text-sm text-muted-foreground">
-            <span className="mt-2 h-1 w-1 flex-shrink-0 rounded-full bg-foreground/30" />
-            <span>{item}</span>
-          </li>
-        ))}
-      </ul>
+      {story ? (
+        <p className="text-sm leading-relaxed text-muted-foreground">
+          {story}
+        </p>
+      ) : description ? (
+        <ul className="space-y-2">
+          {description.map((item, index) => (
+            <li key={index} className="flex items-start gap-2.5 text-sm text-muted-foreground">
+              <span className="mt-2 h-1 w-1 flex-shrink-0 rounded-full bg-foreground/30" />
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      ) : null}
     </div>
   );
 };

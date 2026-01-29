@@ -9,24 +9,13 @@ const Team = () => {
       name: "Rishi",
       role: "Co-founder & CEO",
       linkedIn: "https://www.linkedin.com/in/rishi-r-37705a3a/",
-      description: [
-        "Built & exited Arzooo — $400M annualized sales, largest full-stack vertical e-commerce in India",
-        "Raised $100M, backed by founders from DoorDash, Zoom",
-        "Built products for 500M+ consumers at Flipkart (acq. by Walmart at $16B)",
-        "Forbes 30U30 Asia, #9 Hurun India U35 List",
-      ],
+      story: "Built and exited India's largest full-stack vertical e-commerce platform with $400M in annualized sales. Raised $100M backed by founders from DoorDash and Zoom. Built products reaching 500M+ consumers at Flipkart ($16B acq by Walmart). Recognized as Forbes 30 Under 30 Asia and #9 on Hurun India U35 List.",
     },
     {
       name: "Satwik",
       role: "Co-founder & CTO",
       linkedIn: "https://satwikkottur.github.io/",
-      description: [
-        "Pioneer in agentic AI and Large Action Models",
-        "ex-FAIR and DeepMind",
-        "PhD CMU — award-winning thesis on LAMs",
-        "40+ papers with AI leaders at Nvidia, Apple, FAIR",
-        "All India Rank-6 in IIT, International Olympiad medalist",
-      ],
+      story: "A pioneer in agentic AI and Large Action Models, with experience at FAIR and DeepMind. Holds a PhD from CMU with an award-winning thesis on LAMs. Has published 40+ papers collaborating with AI leaders at Nvidia, Apple, and FAIR. Achieved All India Rank 6 in IIT and is an International Olympiad medalist.",
     },
   ];
 
@@ -54,20 +43,28 @@ const Team = () => {
             </p>
           </div>
 
+          {/* Highlighted Team Origin Statement */}
+          <div className="mb-8 animate-fade-up-delay-1 rounded-xl border border-foreground/10 bg-foreground/[0.03] px-6 py-5">
+            <p className="text-center text-sm leading-relaxed text-foreground md:text-base">
+              Founding team spans{" "}
+              <span className="font-medium">DeepMind</span>,{" "}
+              <span className="font-medium">Google</span>,{" "}
+              <span className="font-medium">Amazon</span>,{" "}
+              <span className="font-medium">CMU</span>,{" "}
+              <span className="font-medium">UC Berkeley</span>{" "}
+              & more.
+            </p>
+          </div>
+
           <div className="space-y-4">
             {founders.map((founder, index) => (
               <TeamMember
                 key={founder.name}
                 {...founder}
-                delay={`animate-fade-up-delay-${index + 1}`}
+                delay={`animate-fade-up-delay-${index + 2}`}
               />
             ))}
           </div>
-
-          <p className="mt-8 animate-fade-up-delay-3 text-center text-xs text-muted-foreground">
-            Founding team spans{" "}
-            <span className="text-foreground">DeepMind, Google, Amazon, CMU, UC Berkeley</span> & more.
-          </p>
         </div>
       </main>
     </div>
