@@ -9,13 +9,13 @@ const Team = () => {
       name: "Rishi",
       role: "Co-founder & CEO",
       linkedIn: "https://www.linkedin.com/in/rishi-r-37705a3a/",
-      story: "Built and exited India's largest full-stack vertical e-commerce platform with $400M in annualized sales. Raised $100M backed by founders from DoorDash and Zoom. Built products reaching 500M+ consumers at Flipkart ($16B acq by Walmart). Recognized as Forbes 30 Under 30 Asia and #9 on Hurun India U35 List.",
+      story: "Built and exited India's largest vertical e-commerce platform ($400M sales). Raised $100M from DoorDash and Zoom founders. Forbes 30 Under 30 Asia.",
     },
     {
       name: "Satwik",
       role: "Co-founder & CTO",
       linkedIn: "https://satwikkottur.github.io/",
-      story: "A pioneer in agentic AI and Large Action Models, with experience at FAIR and DeepMind. Holds a PhD from CMU with an award-winning thesis on LAMs. Has published 40+ papers collaborating with AI leaders at Nvidia, Apple, and FAIR. Achieved All India Rank 6 in IIT and is an International Olympiad medalist.",
+      story: "Pioneer in agentic AI with FAIR and DeepMind experience. PhD from CMU with award-winning thesis on Large Action Models. 40+ papers, IIT AIR 6.",
     },
   ];
 
