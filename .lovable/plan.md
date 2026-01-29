@@ -1,88 +1,95 @@
 
-# Plan: Restructure Layout Like Build Forever for Better Text Visibility
+
+# Plan: Update Video Composition and Redesign Team Page
 
 ## Overview
 
-Restructure the landing page to follow Build Forever's layout pattern where text content sits in the upper portion with a solid cream background, and the video/landscape fills the bottom portion. This ensures perfect text readability while maintaining the peaceful background aesthetic.
+Two main changes:
+1. Regenerate background video with wider landscape composition where devices are visible but not dominant
+2. Redesign Team page to show founder profiles as narrative paragraphs instead of bullet points, with highlighted team origin statement
 
-## Current Issues
+---
 
-- Text is overlaid directly on the video with gradient overlay, causing visibility issues
-- All content is centered vertically in the viewport
-- Text sizes are relatively small for the vision statement
+## 1. Video Regeneration
 
-## Proposed Layout Structure
+### Current Issue
+The video is too zoomed in on the devices, losing the serene landscape aesthetic that worked well in the previous version.
 
-```text
-+----------------------------------+
-|  [Navigation: asmi ... Team]     |
-|                                  |
-|            asmi                  |  <- Solid cream
-|    a personal intelligence       |  <- background area
-|                                  |
-|  The AI that understands your    |
-|     life as a complete system.   |
-|                                  |
-|   [Email input] [Join Waitlist]  |
-|                                  |
-+----------------------------------+
-|                                  |
-|     [Video Background with       |  <- Video fills
-|      peaceful landscape and      |  <- bottom portion
-|      discarded gadgets]          |
-|                                  |
-+----------------------------------+
-|        (c) 2025 Asmi             |
-+----------------------------------+
-```
+### Solution
+Regenerate `src/assets/hero-bg.mp4` with:
 
-## Technical Changes
+**Composition:**
+- Wide establishing shot of peaceful natural landscape (meadow with mountains/sky)
+- Camera positioned at mid-distance, showing the full scene
+- Broken/damaged devices (laptop, smartphone) placed naturally in the lower portion of frame
+- Devices occupy ~20-25% of frame, landscape fills ~75-80%
 
-### 1. Index.tsx - Restructure Layout
+**Device Placement:**
+- Positioned in foreground corners or lower third
+- Clean but clearly not in use (cracked screen, slightly dusty)
+- Static on natural surface (rock, grass)
+- Always visible regardless of video crop/aspect ratio
 
-**Remove navigation from Index** (it will be repositioned):
-- Remove the Navigation component from the main content flow
+**Movement:**
+- Gentle grass and plants swaying in breeze
+- Soft clouds drifting in background
+- Golden hour lighting with subtle warmth
+- Looping seamlessly
 
-**Create two-section layout**:
-- **Top section**: Solid cream background with all text content and waitlist form
-  - Remove `flex-1 justify-center` from main
-  - Position content in upper portion with proper padding
-  - Use `pt-20 md:pt-28` for top spacing below nav
-  
-- **Bottom section**: Video background filling remaining viewport height
-  - Move video to a container that takes ~40-50% of viewport
-  - Remove video overlay opacity, let it show more clearly
-  - Keep subtle top gradient for smooth transition
+---
 
-**Typography updates**:
-- Increase vision statement from `text-sm md:text-base` to `text-base md:text-lg`
-- Increase secondary text similarly
-- Use `max-w-xl` or `max-w-2xl` for better line length
+## 2. Team Page Redesign
 
-### 2. Navigation.tsx - Hide Logo on Index
+### Current State
+- Founder descriptions are bullet point lists
+- Team origin statement is small, at the bottom
 
-Since "asmi" appears as the main headline, hide the nav logo on the index page:
-- Keep only the "Team" link on the right side for index page
-- Show full logo + link on other pages
+### Changes to Team.tsx
 
-### 3. Responsive/Mobile Optimization
+**Founder Profiles - Convert to Paragraphs:**
 
-- Mobile: Video takes less height, more focus on text
-- Use `min-h-[40vh] md:min-h-[50vh]` for video section
-- Proper padding: `px-6` on mobile, `px-10` on desktop
-- Stack elements with appropriate vertical spacing
+**Rishi's story (paragraph format):**
+> Built and exited India's largest full-stack vertical e-commerce platform with $400M in annualized sales. Raised $100M backed by founders from DoorDash and Zoom. Built products reaching 500M+ consumers at Flipkart ($16B acq by Walmart). Recognized as Forbes 30 Under 30 Asia and #9 on Hurun India U35 List.
+
+**Satwik's story (paragraph format):**
+> A pioneer in agentic AI and Large Action Models, with experience at FAIR and DeepMind. Holds a PhD from CMU with an award-winning thesis on LAMs. Has published 40+ papers collaborating with AI leaders at Nvidia, Apple, and FAIR. Achieved All India Rank 6 in IIT and is an International Olympiad medalist.
+
+### Changes to TeamMember.tsx
+
+Update the component to accept either:
+- A `story` prop (string) for paragraph format
+- Or the existing `description` array for backwards compatibility
+
+Replace the bullet point `<ul>` with a flowing `<p>` paragraph when `story` is provided.
+
+### Highlight Team Origin Statement
+
+Move and enhance the "Founding team spans DeepMind, Google..." text:
+- Make it more prominent (larger text, better contrast)
+- Style it as a highlighted callout
+- Use font styling to emphasize the company names
+
+---
 
 ## Files to Modify
 
 | File | Changes |
 |------|---------|
-| `src/pages/Index.tsx` | Restructure layout: solid background for text, video below |
-| `src/components/Navigation.tsx` | Conditionally hide logo on index page |
+| `src/assets/hero-bg.mp4` | Regenerate with wider landscape composition, devices visible in corners |
+| `src/components/TeamMember.tsx` | Add `story` prop for paragraph-style bio, render as flowing text |
+| `src/pages/Team.tsx` | Convert founder data to paragraph format, enhance team origin statement styling |
+
+---
 
 ## Expected Result
 
-- Text will be perfectly readable on solid cream background
-- Video plays peacefully in the lower portion of the viewport
-- Layout mirrors Build Forever's elegant composition
-- Mobile-optimized with proper text sizing and spacing
-- Maintains single-page, no-scroll design
+**Video:**
+- Serene, wide landscape as the primary visual
+- Broken devices visible but as subtle thematic elements
+- Proper aspect ratio handling across all screen sizes
+
+**Team Page:**
+- Clean, narrative founder stories that read like profiles
+- Professional, editorial feel instead of resume-style bullets
+- Prominent highlight of the team's prestigious backgrounds (DeepMind, Google, Amazon, CMU, UC Berkeley)
+
