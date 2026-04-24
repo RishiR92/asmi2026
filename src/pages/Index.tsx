@@ -19,8 +19,8 @@ const Index = () => {
         </p>
 
         {/* Vision statement */}
-        <p className="animate-fade-up-delay-2 mt-6 max-w-md font-mono text-sm leading-relaxed tracking-wide text-foreground md:mt-10 md:max-w-xl md:text-lg">
-          The AI that understands your life as a complete system.
+        <p className="animate-fade-up-delay-2 mt-6 max-w-md font-mono text-sm leading-relaxed tracking-wide text-foreground md:mt-10 md:max-w-xl md:text-lg italic">
+          The AI that handles your <span className="font-bold">personal chores</span> in the real world.
         </p>
 
         {/* Waitlist form */}
