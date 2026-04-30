@@ -1,6 +1,8 @@
 import Navigation from "@/components/Navigation";
 import WaitlistForm from "@/components/WaitlistForm";
-import heroBg from "@/assets/hero-bg.mp4";
+import heroBgAsset from "@/assets/hero-bg.mp4.asset.json";
+
+const heroBg = heroBgAsset.url;
 
 const Index = () => {
   return (
