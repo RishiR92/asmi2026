@@ -1,6 +1,6 @@
 import Navigation from "@/components/Navigation";
 import WaitlistForm from "@/components/WaitlistForm";
-import StorySection from "@/components/StorySection";
+import StoryScroll from "@/components/StoryScroll";
 import act1Asset from "@/assets/act1-bg.mp4.asset.json";
 import act2Asset from "@/assets/act2-bg.mp4.asset.json";
 import act3Asset from "@/assets/act3-bg.mp4.asset.json";
@@ -9,14 +9,17 @@ const acts = [
   {
     videoUrl: act1Asset.url,
     caption: "Every morning, the list begins.",
+    label: "Act 01 — The pile",
   },
   {
     videoUrl: act2Asset.url,
     caption: "Tell Asmi once. She takes it all.",
+    label: "Act 02 — The handoff",
   },
   {
     videoUrl: act3Asset.url,
     caption: "Go live your day. She'll handle it.",
+    label: "Act 03 — Done, quietly.",
   },
 ];
 
@@ -48,15 +51,8 @@ const Index = () => {
         </div>
       </main>
 
-      {/* Three-act story */}
-      {acts.map((act, i) => (
-        <StorySection
-          key={i}
-          index={i + 1}
-          videoUrl={act.videoUrl}
-          caption={act.caption}
-        />
-      ))}
+      {/* Three-act story with sticky cross-fade scroll */}
+      <StoryScroll acts={acts} />
 
       <footer className="flex items-center justify-center bg-background px-6 py-6">
         <span className="font-mono text-xs uppercase tracking-[0.2em] text-foreground/60">
