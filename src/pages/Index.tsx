@@ -39,7 +39,7 @@ const Index = () => {
         </p>
 
         <p className="animate-fade-up-delay-2 mt-6 max-w-md font-mono text-sm leading-relaxed tracking-wide text-foreground md:mt-10 md:max-w-xl md:text-lg italic">
-          The AI that handles your <span className="font-bold">personal chores</span> in the real world.
+          The AI that handles your <span className="font-bold">personal chores</span> in the physical world.
         </p>
 
         <div className="animate-fade-up-delay-3 mt-6 flex w-full justify-center md:mt-10">
